@@ -34,7 +34,7 @@ def get_extensions(names, sources):
             Extension(
                 name=name,
                 sources=[source],
-                include_dirs=["numpy"],
+                include_dirs=[np.get_include()],
                 language=language,
                 extra_compile_args=extra_compile_args,
             )
