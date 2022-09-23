@@ -1,0 +1,7 @@
+[run]
+source= cython_pkg_demo/
+
+omit =
+    cython_pkg_demo/__init__.py
+    cython_pkg_demo/_version.py
+    cython_pkg_demo/tests/*.py
