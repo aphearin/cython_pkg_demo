@@ -1,6 +1,6 @@
 import os
 from setuptools import setup, find_packages
-
+from Cython.Build import cythonize
 
 PACKAGENAME = "cython_pkg_demo"
 __version__ = None
@@ -18,7 +18,8 @@ setup(
     author_email="ahearin@anl.gov",
     description="Some package",
     long_description="Just some package",
-    install_requires=["numpy"],
+    install_requires=["numpy", "cython"],
+    ext_modules=cythonize("cython_pkg_demo/cython_kernels/elementwise_add_cython.pyx"),
     packages=find_packages(),
     url="https://github.com/aphearin/cython_pkg_demo",
     package_data={"cython_pkg_demo": ("tests/testing_data/*.dat",)},

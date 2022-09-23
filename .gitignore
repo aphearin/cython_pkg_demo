@@ -1,3 +1,4 @@
+cython_pkg_demo/cython_kernels/elementwise_add_cython.c
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
