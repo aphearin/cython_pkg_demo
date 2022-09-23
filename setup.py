@@ -1,6 +1,7 @@
 import os
 from setuptools import setup, find_packages, Extension
 import numpy as np
+from Cython.Build import cythonize
 
 PACKAGENAME = "cython_pkg_demo"
 __version__ = None
@@ -33,7 +34,7 @@ def get_extensions(names, sources):
             Extension(
                 name=name,
                 sources=[source],
-                include_dirs=np.get_include(),
+                include_dirs=["numpy"],
                 language=language,
                 extra_compile_args=extra_compile_args,
             )
@@ -50,7 +51,7 @@ setup(
     description="Some package",
     long_description="Just some package",
     install_requires=["numpy", "cython"],
-    ext_modules=get_extensions(ext_names, ext_sources),
+    ext_modules=cythonize(get_extensions(ext_names, ext_sources)),
     packages=find_packages(),
     url="https://github.com/aphearin/cython_pkg_demo",
     package_data={"cython_pkg_demo": ("tests/testing_data/*.dat",)},

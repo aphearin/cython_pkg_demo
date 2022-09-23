@@ -8,7 +8,7 @@ def elementwise_subtract_numpy(x, y):
     return np.array(x) - np.array(y)
 
 
-def elementwise_add_cython_wrapper(x, y):
+def elementwise_subtract_cython_wrapper(x, y):
     x = np.atleast_1d(x)
     y = np.atleast_1d(y)
     n = x.size
